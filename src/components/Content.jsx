@@ -2,7 +2,7 @@ import { Box, Card, CardActions, CardContent, IconButton, Input, InputBase, Text
 import { useState } from "react"
 import {Add} from "@mui/icons-material"
 
-export const Content = () => {
+export const Content = (props) => {
 
     const [note,setNote]  = useState({
         title:'',
@@ -36,8 +36,10 @@ export const Content = () => {
              </CardContent>
              
              <CardActions disableSpacing>
-                <IconButton >
-                    <Add />
+                <IconButton onClick={()=> {
+                    props.onAdd(note)
+                }}>
+                    <Add color="secondary"/>
                 </IconButton>
              </CardActions>
 
