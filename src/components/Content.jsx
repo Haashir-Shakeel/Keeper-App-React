@@ -1,4 +1,4 @@
-import { Box, Card, CardActions, CardContent, IconButton, Input, InputBase, TextField } from "@mui/material"
+import { Box, Card, CardActions, CardContent, Fab, IconButton, Input, InputBase, TextField } from "@mui/material"
 import { useState } from "react"
 import {Add} from "@mui/icons-material"
 
@@ -34,15 +34,15 @@ export const Content = (props) => {
                 value={note.content} onChange={handleChange} name='content'
              />
              <CardActions disableSpacing>
-                <IconButton onClick={()=> {
+                <Fab style={{backgroundColor: 'orange', color: "white" }} onClick={()=> {
                     props.onAdd(note)
                     setNote({
                         title:'',
                         content:''
                     })
                 }}>
-                    <Add color="secondary"/>
-                </IconButton>
+                    <Add/>
+                </Fab>
              </CardActions>
 
              </CardContent>

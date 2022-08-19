@@ -1,5 +1,5 @@
 import { Delete } from "@mui/icons-material"
-import { Box, Card, Typography, CardContent, CardActions, IconButton } from "@mui/material"
+import { Box, Card, Typography, CardContent, CardActions, IconButton, Fab } from "@mui/material"
 
 export const Note = (props) => {
     return(
@@ -10,11 +10,11 @@ export const Note = (props) => {
                 <Typography variant="span">{props.content}</Typography>
             </CardContent>
             <CardActions>
-                <IconButton onClick={()=>{
+                <Fab style={{backgroundColor: 'orange', color: "white" }} onClick={()=>{
                     props.onDelete(props.id)
                     }}>
                     <Delete/>
-                </IconButton>
+                </Fab>
             </CardActions>
         </Card>
         </Box>
