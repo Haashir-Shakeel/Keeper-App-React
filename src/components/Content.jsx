@@ -33,8 +33,6 @@ export const Content = (props) => {
                 placeholder="Take a Note" variant="standard"
                 value={note.content} onChange={handleChange} name='content'
              />
-             </CardContent>
-             
              <CardActions disableSpacing>
                 <IconButton onClick={()=> {
                     props.onAdd(note)
@@ -42,6 +40,10 @@ export const Content = (props) => {
                     <Add color="secondary"/>
                 </IconButton>
              </CardActions>
+             
+             </CardContent>
+             
+             
 
             </Card>
         </Box>

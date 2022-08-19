@@ -2,6 +2,7 @@ import {Box} from '@mui/material'
 import { useState } from 'react';
 import { Content } from './components/Content';
 import { NavBar } from './components/NavBar';
+import { Note } from './components/Note';
 
 
 
@@ -21,6 +22,9 @@ function App() {
     <Box>
     <NavBar/>
     <Content onAdd = {addNote} />
+    <Note title="Note Title" content="Note Content here" />
+    <Note title="Note Title" content="Note Content here" />
+    <Note title="Note Title" content="Note Content here" />
     </Box>
   );
 }
