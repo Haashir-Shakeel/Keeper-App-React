@@ -15,16 +15,25 @@ function App() {
   setNoteList((prevValues)=>{
     return [...prevValues, newNote]
   })
-  console.log(noteList)
+  }
+
+  const DeleteNote = (id) => {
+    console.log(id)
   }
 
   return (
-    <Box>
+    <Box bgcolor="#FFFF93">
     <NavBar/>
     <Content onAdd = {addNote} />
+    {/* <Note title="Note Title" content="Note Content here" />
     <Note title="Note Title" content="Note Content here" />
-    <Note title="Note Title" content="Note Content here" />
-    <Note title="Note Title" content="Note Content here" />
+    <Note title="Note Title" content="Note Content here" /> */}
+    {
+    noteList.map((noteItem,index) => {
+      return <Note key={index} title={noteItem.title} content={noteItem.content}
+      onDelete = {DeleteNote} id={index} />
+    })
+    }
     </Box>
   );
 }
