@@ -18,16 +18,17 @@ function App() {
   }
 
   const DeleteNote = (id) => {
-    console.log(id)
+    setNoteList((prevValues)=>{ 
+      return prevValues.filter((item,index)=>{
+        return index!==id
+      })
+    })
   }
 
   return (
     <Box bgcolor="#FFFF93">
     <NavBar/>
     <Content onAdd = {addNote} />
-    {/* <Note title="Note Title" content="Note Content here" />
-    <Note title="Note Title" content="Note Content here" />
-    <Note title="Note Title" content="Note Content here" /> */}
     {
     noteList.map((noteItem,index) => {
       return <Note key={index} title={noteItem.title} content={noteItem.content}

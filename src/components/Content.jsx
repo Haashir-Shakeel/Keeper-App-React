@@ -36,6 +36,10 @@ export const Content = (props) => {
              <CardActions disableSpacing>
                 <IconButton onClick={()=> {
                     props.onAdd(note)
+                    setNote({
+                        title:'',
+                        content:''
+                    })
                 }}>
                     <Add color="secondary"/>
                 </IconButton>
